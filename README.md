@@ -1,6 +1,6 @@
 # Octosil
 
-<h2>What is Octosil?</h2>
+##What is Octosil?
 Octosil is an open-source Java program in its extremely early stages being developed by me and a couple of my colleagues as a personal project.
 
 We're still deciding on what this program is going to be, but we have come up with a couple of ideas already:
