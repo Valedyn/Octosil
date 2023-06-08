@@ -18,7 +18,7 @@ public abstract class Directory {
      * Mac: Library/Application Support/
      * @author Valedyn
      * @since 1.0
-     * @param name_of_directory tne name of the directory that is to be created
+     * @param name_of_directory the name of the directory that is to be created
      */
     public static void setup(String name_of_directory){
         String appdata_directory;
@@ -28,18 +28,17 @@ public abstract class Directory {
             File setup_directory = new File(appdata_directory);
 
             if(setup_directory.exists()){
-                Testing.Test.println("File/directory already exists!");
+                Testing.Validator.println(String.format("Directory: %s | already exists!", setup_directory.getAbsolutePath()));
                 if(setup_directory.isDirectory()){
-                    Testing.Test.println("Confirmed that the directory is, in fact, a directory!");
+                    Testing.Validator.println(String.format("Confirmed that the directory: %s | is, in fact, a directory!", setup_directory.getAbsolutePath()));
                 }
             }else{
                 if(setup_directory.mkdirs()){
-                   Testing.Test.println("Successfully created the directory!");
+                   Testing.Validator.println(String.format("Successfully created the directory: %s !", setup_directory.getAbsolutePath()));
                 }else {
-                    Testing.Test.println("It seems that there was an error while creating the directory!");
+                    Testing.Validator.println(String.format("It seems that there was an error while creating the directory: %s !", setup_directory.getAbsolutePath()));
                 }
             }
-            Testing.Test.println(String.format("%s is the path of the directory which was meant to be created.", appdata_directory));
         }catch(SecurityException securityException){
             Testing.Error.println("Security manager rejected access to user.home!");
         }catch(NullPointerException nullPointerException){
@@ -49,7 +48,12 @@ public abstract class Directory {
         }
 
     }
-
+    /**
+     * This method returns the the path to the directory where all necessary data is stored
+     * @author Valedyn
+     * @since 1.0
+     * @returns String containing the location to the directory where the data is stored
+     */
     public static String return_Appdata_Location(){
 
         String operating_system = System.getProperty("os.name").toLowerCase(Locale.ROOT);
