@@ -15,9 +15,9 @@ public class File {
     private String extension;
 
     /**
-     * @param path      String of the path where a file is going to be created.
-     * @param name      A String of the name of the file which is going to be created
-     * @param extension A String of the extension of the file which is going to be created
+     * @param path      String of the path where the file is supposed to be located
+     * @param name      A String of the name of the file
+     * @param extension A String of the extension of the file
      * @throws IOException throws the Exception when both the file doesn't exist and the method to create the file results in an error.
      * @author Valedyn
      * @since 1.0
@@ -27,7 +27,6 @@ public class File {
         this.file = new java.io.File(full_path);
         this.name = name;
         this.extension = extension;
-
     }
 
     /**
@@ -62,8 +61,13 @@ public class File {
             try (FileReader readFile = new FileReader(file); BufferedReader buffer = new BufferedReader(readFile)) {
                 StringBuilder final_string = new StringBuilder();
                 String one_line = "";
+                String old_line = "";
                 while ((one_line = buffer.readLine()) != null) {
+                    if(!old_line.isEmpty()){
+                        final_string.append("\n");
+                    }
                     final_string.append(one_line);
+                    old_line = one_line;
                 }
                 buffer.close();
                 readFile.close();
@@ -85,9 +89,11 @@ public class File {
      * @return boolean, true or false depending on whether the writing to the file went successfully or not
      */
     public boolean overwrite(String data) {
+        StringBuilder data_builder = new StringBuilder(data);
         if (exists()) {
             try (FileWriter writeFile = new FileWriter(file); BufferedWriter buffer = new BufferedWriter(writeFile)) {
-               buffer.write(data);
+                buffer.write(data_builder.toString());
+
                buffer.close();
                writeFile.close();
                return true;
@@ -115,7 +121,7 @@ public class File {
             }
     }
     /**
-     * Appends/ writes data to the file, data will be surrounded by the delimiter character
+     * Appends data to the file, data will be surrounded by the delimiter character
      * @author Valedyn
      * @since 1.2
      * @param data String to be written to the file
