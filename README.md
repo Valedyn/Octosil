@@ -1,17 +1,7 @@
 # Octosil
 
 ## What is Octosil?
-Octosil is an open-source Java program in its extremely early stages being developed by me and a couple of my colleagues as a personal project.
-
-We're still deciding on what this program is going to be, but we have come up with a couple of ideas already:
-
-video player,
-music player,
-general media player (video player and music player in one program),
-text editor,
-note/task creation program,
-calendar (that will give you the ability to make notes for specific days, or make reminders... etc.),
-more TBD;
+Octosil is an open-source Java program in its extremely early stages being developed quite irregularly by me and a couple of my colleagues as a personal project. It's a calendar program, where you can note down specific tasks which need to be done on specific days.
 
 <h3>FAQ:</h3>
 Q: When did the team decide to begin creating this project?
@@ -23,6 +13,7 @@ A: 17.
 
 Q: What GUI library are you using/ going to be using?
 A: JavaFX
+
 
 
  
