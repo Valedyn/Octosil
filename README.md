@@ -1,11 +1,13 @@
 # Octosil
 
 ## What is Octosil?
-Octosil is an open-source Java program in its extremely early stages being developed quite irregularly by me and a couple of my colleagues as a personal project. It's a calendar program, where you can note down specific tasks which need to be done on specific days.
+Octosil was a calender program developed about a year ago by me. It was a school project, and is a rush job.
+
+This project is not being worked on anymore - and hasn't been, for ages - but I plan on revisiting it in the future. My JavaFX skills have been getting quite rusty.
 
 <h3>FAQ:</h3>
 Q: When did the team work on this project?
-A: From the 11th of April, 2023 to the ~18th. Github updates were slow, however.
+A: From the 11th of April, 2023 to the ~18th. Github updates were practically nonexistent however, leading to outdated code. 
 
 Q: In what version of Java is this project being written?
 A: 17.
